@@ -7,6 +7,8 @@ accounts, and the toolbar badge shows the total number of unread messages.
 **Install from the Chrome Web Store:**
 https://chromewebstore.google.com/detail/flyver-unified-gmail-mana/eihnabkolnifnoihmhpccgekaaelmmnd
 
+Website: https://johanschnor.github.io/flyver/ · [Privacy policy](https://johanschnor.github.io/flyver/privacy.html) · [Support](https://johanschnor.github.io/flyver/support.html)
+
 ## Project structure
 
 ```
@@ -15,6 +17,7 @@ background.js          Service worker: OAuth flow, token refresh, unread badge
 src/popup/             Popup UI (popup.html, popup.js, popup.css)
 src/icons/             Icons
 libs/purify.min.js     DOMPurify (Apache-2.0 / MPL-2.0)
+docs/                  Website (GitHub Pages): home, privacy policy, support
 ```
 
 ## Run it locally (unpacked)
