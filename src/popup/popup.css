@@ -1,0 +1,271 @@
+/* General body styling */
+body {
+    font-family: "Google Sans",Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    width: 650px; /* Fixed width */
+    height: 600px; /* Fixed height */
+    overflow: hidden; /* Prevent scrolling outside the popup */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header container styling */
+#header {
+    display: flex;
+    justify-content: space-between; /* Placerer elementer i hver sin ende */
+    align-items: center; /* Vertikal centrering */
+    padding: 15px;
+    background-color: #12446c; /* Blå baggrund */
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0
+}
+
+/* Juster h1 for at fjerne ekstra margin */
+#header h1 {
+    font-size: 1.2rem;
+    font-weight: bolder;
+    margin: 0;
+}
+
+#icon-container {
+    display: flex;
+    gap: 5px; /* Reducer afstanden mellem ikonerne */
+    justify-content: flex-end; /* Placer ikonerne i højre side */
+    align-items: center; /* Vertikal centrering */
+}
+/* Knappen i højre hjørne */
+#settings-icon,
+#loadMoreButton,
+#Sent-emails,
+#inbox-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #333;
+  margin: 0; /* Sørg for ingen margin */
+}
+
+#settings-icon:before {
+    content: "⚙️"; /* Fallback-ikon */
+}
+#inbox-button:before {
+    content: "↩️"; /* Fallback-ikon */
+}
+#loadMoreButton:before {
+    content: "📑"; /* Fallback-ikon */
+}
+#Sent-emails:before {
+    content: "📬"; /* Fallback-ikon */
+}
+
+/* Mailbox container */
+#mailbox {
+    flex: 1;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual email styling */
+.email {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.email:hover {
+    background-color: #e8f0fe; /* Light blue hover effect */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Email content view */
+#email-content {
+    display: none;
+    flex: 1;
+    width: 100%;
+    height: calc(100% - 50px); /* Juster højde baseret på headerens højde */
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    overflow-y: auto; /* Tillad scrolling i mailens indhold */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Email content subject */
+#email-content h2 {
+    font-size: 1.0rem;
+    margin-bottom: 1px;
+    color: #000000f9;
+    font-weight: normal;
+}
+
+/* Email content sender */
+#email-content p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Tilbage-knap styling */
+#email-content #back-button, #forward-button, #email-content #reply-button, #email-content #delete-button {
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 7px; /* Giver lidt afstand til emnet */
+    padding: 10px 20px;
+    font-size: 12px;
+    color: white;
+    background-color:#12446c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+
+#email-content #back-button:hover {
+    background-color: #12446c;
+}
+
+/* HTML-indhold styling */
+#email-body {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333 !important;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    overflow-y: auto;
+}
+
+body, iframe {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    image-rendering: auto;
+  }
+/* Styling for links i mailen */
+#email-body a {
+    color: #333;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+#email-body a:hover {
+    text-decoration: underline;
+}
+
+/* Styling for billeder i mailen */
+#email-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
+/* Styling for ulæste mails */
+.email.unread {
+    background-color: #e8f0fe; /* Lys blå baggrund */
+    font-weight: bold;
+    color: #333;
+}
+
+/* Styling for læste mails */
+.email.read {
+    background-color: #f9f9f9; /* Lys grå baggrund */
+    font-weight: normal;
+    color: #666;
+}
+
+/* Hover-effekt for mails */
+.email:hover {
+    background-color: #dceefb; /* Mørkere blå ved hover */
+    cursor: pointer;
+}
+/* Tilbage-knap styling */
+#back-to-mailbox {
+    margin-left: 10px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 12px;
+    color: white;
+    background-color: #12446c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#back-to-mailbox:hover {
+    background-color: #0d3554;
+}
+#settings-content {
+ margin-left: 10px;
+ font-size: 12px;
+ font-family: "Google Sans",Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+}
+
+#settings-content h1 {
+    font-weight: bold;
+    font-family: "Google Sans",Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-size: 1.2rem;
+
+}
+
+/* Farvevælger container */
+#color-picker {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 farver pr. række */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Individuelle farvebokse */
+.color-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.color-box:hover {
+    transform: scale(1.1); /* Forstør ved hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#logout-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d93025;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#logout-button:hover {
+    background-color: #b0241d;
+}

@@ -1,0 +1,11 @@
+# OS / editor junk
+.DS_Store
+__MACOSX/
+*.swp
+.vscode/
+.idea/
+
+# Packaged builds
+*.zip
+*.crx
+*.pem

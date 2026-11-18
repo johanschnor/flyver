@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Mailbox</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div id="header">
+        <h1>Flyver</h1>
+        <div id="icon-container">
+        <button id="loadMoreButton" title="Load 10 more mails"></button>
+        <button id="settings-icon" title="Settings"></button>
+        <button id="Sent-emails" title="Sent Mails"></button>
+        <button id="inbox-button" style="display: none;"></button>
+        </div>
+    </div>
+
+    <div id="mailbox"></div>
+    
+    <!-- Email preview-indhold -->
+    <div id="email-content" style="display: none;">
+        <iframe
+            id="email-body-iframe"
+            sandbox="
+                allow-same-origin 
+                allow-scripts 
+                allow-popups 
+                allow-popups-to-escape-sandbox 
+                allow-top-navigation-by-user-activation 
+                allow-forms
+            "
+            style="width: 100%; height: 80vh; border: none;"
+        ></iframe>
+    </div>
+
+    <div id="settings-content" style="display: none;">
+        <h1>Configuration</h1>
+        <div class="settings-container">
+            <p>Manage multiple email accounts seamlessly in one organized inbox..</p>
+        <button id="back-to-mailbox">Back</button>
+    </div>
+
+    <script src="popup.js" defer></script>
+</body>
+</html>
